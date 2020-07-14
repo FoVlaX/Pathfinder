@@ -110,6 +110,7 @@ public class Pathfinder {
 
 
         Integer value = helpMap[pos.x][pos.y];
+
         if (pos.x + 1 < height) {
 
             pos.x++;

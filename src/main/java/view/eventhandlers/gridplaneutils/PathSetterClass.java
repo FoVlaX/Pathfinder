@@ -25,7 +25,7 @@ public class PathSetterClass {
     }
     public static void createPath(List<Coord> coordList){
         try {
-            Object [][]objects = Main.getMain().getObjects();
+
 
             Integer height = Pathfinder.getPathfinder().getHeight();
 
@@ -34,12 +34,12 @@ public class PathSetterClass {
             for (Coord c : coordList) {
 
                 try {
-                    Cell cell = (Cell) objects[c.x][c.y];
+                    Cell cell = (Cell) Main.getMain().getGridPane().getChildren().get(c.x*height+c.y);
 
                     cell.setStateForCell(ImageCell.pointPathCell);
                     pathCells.add(cell);
                 }catch(Exception ex){
-                    Ball ball = (Ball) objects[c.x][c.y];
+                    Ball ball = (Ball)Main.getMain().getGridPane().getChildren().get(c.x*height+c.y);
                     ball.setSelection(Boolean.TRUE);
                 }
 

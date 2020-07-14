@@ -35,7 +35,7 @@ public class Main extends Application {
     private GridPane gridPane;
     private Scene scene;
     private TilePane tilePane;
-    private Object [][] objects;
+
     private Text downText;
     private static Main main;
 
@@ -92,9 +92,7 @@ public class Main extends Application {
         return gridPane;
     }
 
-    public Object[][] getObjects(){
-        return objects;
-    }
+
 
     public void assembleGridPlane(){
         Ball.clearBall();
@@ -104,17 +102,17 @@ public class Main extends Application {
         Integer [][] map = pathfinder.getMap();
 
         gridPane = new GridPane();
-        objects = new Object[map.length][map[0].length];
+
         for (int x = 0;x < map.length;x++){
             for (int y = 0;y < map[x].length;y++){
                 if (map[x][y].equals(1)){
                     Ball ball = new Ball(x,y);
                     gridPane.add(ball,x,y);
-                    objects[x][y] = ball;
+
                 }else{
                     Cell cell = new Cell(x,y);
                     gridPane.add(cell,x,y);
-                    objects[x][y] = cell;
+
                 }
             }
         }

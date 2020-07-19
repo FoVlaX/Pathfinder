@@ -13,7 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
-import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
+
 import pathfinder.Pathfinder;
 import view.elements.Ball;
 import view.elements.Cell;
@@ -98,7 +98,7 @@ public class Main extends Application {
 
 
 
-    public void assembleGridPlane(){
+    public void assembleGridPlane() throws Exception {
         Ball.clearBall();
         Cell.clearCells();
         Pathfinder pathfinder = Pathfinder.getPathfinder();

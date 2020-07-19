@@ -14,6 +14,10 @@ public class GenerateBallsEventHandler implements EventHandler<MouseEvent> {
         pathfinder.setCellCoord(null);
         pathfinder.setBallCoord(null);
         Cell.setPathCells(null);
-        Main.getMain().assembleGridPlane();
+        try {
+            Main.getMain().assembleGridPlane();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -11,6 +11,7 @@ import java.util.List;
 
 public class Ball extends ImageView {
 
+    private static Integer test;
     private Integer x;
     private Integer y;
     final private String imgCirclePath = "file:src/main/resources/circle.png";
@@ -21,12 +22,14 @@ public class Ball extends ImageView {
 
     private static List<Ball> balls;
 
-    public Ball(Integer x, Integer y) {
+    public Ball(final Integer x, final Integer y) throws Exception {
         super();
 
         if (balls == null){
             balls = new ArrayList<Ball>();
         }
+
+
 
         balls.add(this);
 
@@ -38,8 +41,19 @@ public class Ball extends ImageView {
         this.y = y;
         addEventHandler(MouseEvent.MOUSE_CLICKED, new BallMouseEventHandler());
 
-    }
+        int i =0, j = 10;
+        try{
+            int r = j /i;
+        } catch (ArithmeticException ex){
 
+        } catch (Exception ex){
+
+        }
+
+    }
+    public static void main(String []args){
+
+    }
     public static void setSelectedBall(Ball ball){
         selectedBall = ball;
     }

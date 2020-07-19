@@ -28,6 +28,13 @@ public class Pathfinder {
         createMap();
     }
 
+    public static Pathfinder getPathfinder(){
+        if (pathfinder == null){
+            pathfinder = new Pathfinder();
+        }
+        return pathfinder;
+    }
+
     public Integer getHeight() {
         return height;
     }
@@ -53,6 +60,7 @@ public class Pathfinder {
     }
 
     private List<Coord> repairPathFromPathMap(){
+
         if (helpMap[cellCoord.x][cellCoord.y] > 0) {
 
             List<Coord> coordList = new ArrayList<Coord>();
@@ -107,7 +115,6 @@ public class Pathfinder {
     }
 
     private void generateMinPathMap(Coord pos){
-
 
         Integer value = helpMap[pos.x][pos.y];
 
@@ -174,10 +181,5 @@ public class Pathfinder {
         return this.ballCoord;
     }
 
-    public static Pathfinder getPathfinder(){
-        if (pathfinder == null){
-            pathfinder = new Pathfinder();
-        }
-        return pathfinder;
-    }
+
 }
